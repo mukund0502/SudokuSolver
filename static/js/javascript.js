@@ -8,9 +8,41 @@ var r7 = document.getElementsByClassName("r7");
 var r8 = document.getElementsByClassName("r8");
 var r9 = document.getElementsByClassName("r9");
 
+const photos = document.getElementById("photos");
+
+const frame = document.getElementById("frame");  
+
+const capture = document.getElementById("capture")
+
 var messege = document.getElementsByClassName("messege");
 
 var reset = document.getElementById("reset")
+
+
+
+
+capture.addEventListener('click', ()=>{
+    if(capture.innerHTML == 'photo'){
+        frame.style.visibility = 'visible'
+
+        Webcam.set({
+            image_fromat:'jpeg',
+            jpeg_quality:100
+        })
+        capture.innerHTML = 'Capture'
+        Webcam.attach(frame);
+    }
+    else if(capture.innerHTML == 'Capture'){
+        Webcam.snap(function(data) {
+            frame.innerHTML = '<img src = "'+data+'"/>'
+            capture.innerHTML = "retake"
+        });
+    }else{
+        Webcam.attach(frame);
+        capture.innerHTML = "Capture"
+    }
+    
+})
 
 
 var t = [r1,r2,r3,r4,r5,r6,r7,r8,r9];

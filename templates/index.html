@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sudoku Solver</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href = {{ url_for('static', filename='/css/style.css')}}>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
@@ -182,12 +182,21 @@
     <div class="btn" id="btn">
         <button class="button" id="reset" onclick="functionn">Reset</button>
         <button class="button" id="button" onclick="functionn">Calculate</button>
+        <button class="button" id="capture" >photo</button>
+    </div>
+    <div id="frame">
+
+    </div>
+    
+    <div id="photos">
+
     </div>
     <div class="messege">
         
     </div>
 </body>
-<script src="javascript.js">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js" integrity="sha512-dQIiHSl2hr3NWKKLycPndtpbh5iaHLo6MwrXm7F0FM5e+kL2U16oE9uIwPHUl6fQBeCthiEuV/rzP3MiAB8Vfw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type = "text/javascript" src = {{ url_for('static', filename='/js/javascript.js' ) }}>
 </script>
 
 </html>

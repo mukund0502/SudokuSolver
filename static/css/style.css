@@ -101,10 +101,14 @@ input[type=number] {
     .sheet{
         margin-top: 10vh;
     }
+    #frame{
+        margin-top: 10vh;
+    }
 
     .heading{
         font-size: 10vw;
         text-align: center;
+        
     }
     .button{
         font-size: 6vw;
@@ -114,4 +118,15 @@ input[type=number] {
         display: flex;
         flex-direction: row;
     }
+  }
+
+  #frame{
+    
+    visibility:hidden;
+    margin: auto;
+    position: relative;
+    top: -72vw;
+    width: 62vw;
+    height: 62vw;
+
   }
