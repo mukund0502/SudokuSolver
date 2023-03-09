@@ -1,4 +1,6 @@
 from flask import Flask, render_template, redirect
+from SudokuExtractor import extract_sudoku
+
 
 app = Flask(__name__)
 
