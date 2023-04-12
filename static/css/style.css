@@ -121,12 +121,12 @@ input[type=number] {
   }
 
   #frame{
-    
+    background-color: antiquewhite;
     visibility:hidden;
     margin: auto;
     position: relative;
-    top: -72vw;
-    width: 62vw;
-    height: 62vw;
+    top: -561px;
+    width: 100px;
+    height: 200px;
 
   }

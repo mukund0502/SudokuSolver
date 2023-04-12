@@ -8,6 +8,8 @@ var r7 = document.getElementsByClassName("r7");
 var r8 = document.getElementsByClassName("r8");
 var r9 = document.getElementsByClassName("r9");
 
+const form = document.getElementById('form')
+
 const photos = document.getElementById("photos");
 
 const frame = document.getElementById("frame");  
@@ -24,10 +26,14 @@ var reset = document.getElementById("reset")
 capture.addEventListener('click', ()=>{
     if(capture.innerHTML == 'photo'){
         frame.style.visibility = 'visible'
-
+        console.log(1);
         Webcam.set({
+            width: 500,
+		    height: 500,
             image_fromat:'jpeg',
+            flip_horiz: true,
             jpeg_quality:100
+
         })
         capture.innerHTML = 'Capture'
         Webcam.attach(frame);
@@ -35,6 +41,9 @@ capture.addEventListener('click', ()=>{
     else if(capture.innerHTML == 'Capture'){
         Webcam.snap(function(data) {
             frame.innerHTML = '<img src = "'+data+'"/>'
+            console.log(form['firstChild']);
+            form.children[0]['src'] = data
+            console.log(form.firstChild);
             capture.innerHTML = "retake"
         });
     }else{
@@ -164,6 +173,10 @@ button.addEventListener("click", ()=>{
 })
 
 reset.addEventListener("click", ()=>{
+    frame.style.visibility = 'hidden'
+    Webcam.reset();
+    capture.innerHTML = "photo"
+
     messege[0].innerHTML = "";  
     for (let index2 = 0; index2 < t.length; index2++) {
         var rr = t[index2];
