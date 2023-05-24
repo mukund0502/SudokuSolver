@@ -7,7 +7,7 @@ from tensorflow.keras import models
 import numpy as np 
 UPLOAD_FOLDER = './static'
 
-predicted_array = np.zeros(0).astype('int')
+predicted_array = np.array([''])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -28,6 +28,10 @@ def again():
         extracted_sudoku = extract_sudoku(pathh)
         print(extracted_sudoku)
         predicted_array = convert2numberarray(extracted_sudoku)
+        # predicted_array = predicted_array.to_list()
+        for i in range(0, len(predicted_array)):
+            if predicted_array[i] == 0:
+                predicted_array[i] =''
         
         os.remove(f"./static/{filee.filename}")
         return render_template('index.html', predicted_array = predicted_array)

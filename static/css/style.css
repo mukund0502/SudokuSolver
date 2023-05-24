@@ -120,6 +120,11 @@ input[type=number] {
     }
   }
 
+
+input[type=file] {
+
+}
+
   #frame{
     background-color: antiquewhite;
     visibility:hidden;

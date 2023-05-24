@@ -22,7 +22,7 @@ var reset = document.getElementById("reset")
 
 
 
-// code for capturing picture from the webcame and then enablinf button for retake.
+// code for capturing picture from the webcame and then enabling button for retake.
 
 // capture.addEventListener('click', ()=>{
 //     if(capture.innerHTML == 'photo'){
@@ -60,6 +60,7 @@ var reset = document.getElementById("reset")
 var t = [r1,r2,r3,r4,r5,r6,r7,r8,r9];
 
 var button = document.getElementById("button")
+
 button.addEventListener("click", ()=>{
     var arr = [];
     for (let i = 0; i < 9; i++) {
@@ -67,7 +68,7 @@ button.addEventListener("click", ()=>{
         var k = t[i];
         for (let j = 0; j < 9; j++) {
             // console.log(k[j]);
-            if(k[j].value==""){
+            if(k[j].value=="" || k[j].value == 0){
                 temp.push(0);
             }else{
                 temp.push(k[j].value);
@@ -77,12 +78,7 @@ button.addEventListener("click", ()=>{
         
     }
 
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr[i].length; j++) {
-           console.log(arr[i][j]);
-        }
-        
-    }
+    console.log(arr);
 
     function check(board, c, i, j) {
         ret = true;
@@ -156,6 +152,7 @@ button.addEventListener("click", ()=>{
 
     function solveSudoku(board) {
         if(isValidSudoku(board)==false){
+            alert("Invalid sudoku!!! Try again with valid data.");
             messege[0].innerHTML = "Invalid sudoku!!! Try again with valid data.";  
         }
         else{
@@ -171,9 +168,10 @@ button.addEventListener("click", ()=>{
         }
         
     }
-
     solveSudoku(arr);
 })
+
+
 
 reset.addEventListener("click", ()=>{
     frame.style.visibility = 'hidden'
