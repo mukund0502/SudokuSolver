@@ -3,7 +3,7 @@ import cv2
 import operator
 import numpy as np
 from matplotlib import pyplot as plt
-from NumberExtractor import extract_number
+# from NumberExtractor import extract_number
 
 
 def plot_many_images(images, titles, rows=1, columns=2):
@@ -337,11 +337,11 @@ def extract_sudoku(image_path):
     final_image = parse_grid(image_path)
     return final_image
 
-extracted_sudoku = extract_sudoku("sudoku.png")
-cv2.imshow("image", extracted_sudoku )
+# extracted_sudoku = extract_sudoku("sudoku.png")
+# cv2.imshow("image", extracted_sudoku )
 # grid = extract_number(extracted_sudoku)
 # print(grid)
-cv2.waitKey(0)
+# cv2.waitKey(0)
 
 
 

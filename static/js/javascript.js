@@ -22,36 +22,39 @@ var reset = document.getElementById("reset")
 
 
 
+// code for capturing picture from the webcame and then enablinf button for retake.
 
-capture.addEventListener('click', ()=>{
-    if(capture.innerHTML == 'photo'){
-        frame.style.visibility = 'visible'
-        console.log(1);
-        Webcam.set({
-            width: 500,
-		    height: 500,
-            image_fromat:'jpeg',
-            flip_horiz: true,
-            jpeg_quality:100
+// capture.addEventListener('click', ()=>{
+//     if(capture.innerHTML == 'photo'){
+//         frame.style.visibility = 'visible'
+//         console.log(1);
+//         Webcam.set({
+//             width: 500,
+// 		    height: 500,
+//             image_fromat:'jpeg',
+//             flip_horiz: true,
+//             jpeg_quality:100,
+//             image_format: 'jpeg'
 
-        })
-        capture.innerHTML = 'Capture'
-        Webcam.attach(frame);
-    }
-    else if(capture.innerHTML == 'Capture'){
-        Webcam.snap(function(data) {
-            frame.innerHTML = '<img src = "'+data+'"/>'
-            console.log(form['firstChild']);
-            form.children[0]['src'] = data
-            console.log(form.firstChild);
-            capture.innerHTML = "retake"
-        });
-    }else{
-        Webcam.attach(frame);
-        capture.innerHTML = "Capture"
-    }
+//         })
+//         capture.innerHTML = 'Capture'
+//         Webcam.attach(frame);
+//     }
+//     else if(capture.innerHTML == 'Capture'){
+//         Webcam.snap(function(data) {
+//             frame.innerHTML = '<img src = "'+data+'"./>'
+//             console.log(form['firstChild']);
+//             form.children[0]['src'] = data;
+//             console.log(form.firstChild);
+//             capture.innerHTML = "retake"
+//             // Webcam.upload( data_uri, 'myscript.php' );
+//         });
+//     }else{
+//         Webcam.attach(frame);
+//         capture.innerHTML = "Capture"
+//     }
     
-})
+// })
 
 
 var t = [r1,r2,r3,r4,r5,r6,r7,r8,r9];
